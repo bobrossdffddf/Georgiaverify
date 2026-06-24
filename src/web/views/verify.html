@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>%%SERVER_NAME%% — Verify</title>
+  <link rel="icon" href="/static/img/logo.webp">
+  <link rel="stylesheet" href="/static/css/style.css">
+  %%DATA%%
+</head>
+<body>
+  <img class="bg-img" src="/static/img/background.webp" alt="">
+  <img class="corner right" src="/static/img/corner-right.png" alt="">
+  <img class="corner left" src="/static/img/corner-left.png" alt="">
+  <div class="bg-overlay"></div>
+
+  <header class="site">
+    <div class="brand">
+      <img src="/static/img/logo.webp" alt="">
+      <span>%%SERVER_NAME%%</span>
+    </div>
+    <a class="help" id="help-link" href="%%DISCORD_URL%%" target="_blank" rel="noopener">Need help?</a>
+  </header>
+
+  <main class="site">
+    <div class="card">
+
+      <!-- progress (ready state only) -->
+      <div class="progress hidden" id="progress">
+        <div class="seg"><i style="width:100%"></i></div>
+        <div class="seg"><i style="width:0%" id="seg2"></i></div>
+        <div class="seg"><i style="width:0%" id="seg3"></i></div>
+      </div>
+
+      <!-- READY -->
+      <section class="step hidden" id="state-ready">
+        <div class="eyebrow">Account Verification</div>
+        <h2 class="title">Connect your Roblox</h2>
+        <p class="lead left">Your Discord is linked. Authorize with Roblox to confirm account ownership and receive your roles.</p>
+
+        <div class="account">
+          <div class="avatar" id="dc-avatar">D</div>
+          <div class="meta">
+            <div class="name" id="dc-name">Discord user</div>
+            <div class="sub">Discord · Connected</div>
+          </div>
+          <svg class="check" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#34c759"></circle><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="18" stroke-dashoffset="18" style="animation:gsrp-draw .45s ease forwards .12s"></path></svg>
+        </div>
+
+        <a class="btn" id="roblox-btn" href="#" style="margin-top:18px">
+          <img class="rbx" src="/static/img/roblox.png" alt="">
+          <span id="roblox-btn-label">Continue with Roblox</span>
+        </a>
+
+        <p class="note">By continuing you agree to our
+          <a href="%%TERMS_URL%%" target="_blank" rel="noopener">Terms</a> &amp;
+          <a href="%%PRIVACY_URL%%" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+      </section>
+
+      <!-- EXPIRED -->
+      <section class="step center hidden" id="state-expired">
+        <svg class="success-check" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="#e0a23c" stroke-width="4"></circle><path d="M40 22v22" stroke="#e0a23c" stroke-width="5" stroke-linecap="round"></path><circle cx="40" cy="56" r="3" fill="#e0a23c"></circle></svg>
+        <h2 class="title">Link expired</h2>
+        <p class="lead">This verification link has expired or was already used. Verification links are valid for 10 minutes and can only be used once.</p>
+        <a class="btn" href="%%DISCORD_URL%%" target="_blank" rel="noopener">Return to Discord</a>
+        <p class="note">Run <b>/verify</b> in the server (or press the Verify button) to get a fresh link.</p>
+      </section>
+
+      <!-- ERROR -->
+      <section class="step center hidden" id="state-error">
+        <svg class="success-check" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="none" stroke="#e0573c" stroke-width="4"></circle><path d="M30 30l20 20M50 30l-20 20" stroke="#e0573c" stroke-width="5" stroke-linecap="round"></path></svg>
+        <h2 class="title" id="err-title">Something went wrong</h2>
+        <p class="lead" id="err-message">Please try again from Discord.</p>
+        <a class="btn" href="%%DISCORD_URL%%" target="_blank" rel="noopener">Return to Discord</a>
+      </section>
+
+      <!-- NO TOKEN (landing) -->
+      <section class="step center hidden" id="state-notoken">
+        <img class="logo-lg" src="/static/img/logo.webp" alt="">
+        <div class="eyebrow">Account Verification</div>
+        <h1 class="title">Verify your identity</h1>
+        <p class="lead">To verify, open <b>%%SERVER_NAME%%</b> in Discord and run the <b>/verify</b> command (or press the Verify button on the verification panel) to get your personal link.</p>
+        <a class="btn" href="%%DISCORD_URL%%" target="_blank" rel="noopener">Open Discord</a>
+        <p class="note">Links are personal and expire after 10 minutes.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site">
+    <a href="%%DISCORD_URL%%" target="_blank" rel="noopener">Discord</a>
+    <span class="dot">·</span>
+    <a href="%%TERMS_URL%%">Terms</a>
+    <span class="dot">·</span>
+    <a href="%%PRIVACY_URL%%">Privacy Policy</a>
+  </footer>
+
+  <script src="/static/js/verify.js"></script>
+</body>
+</html>

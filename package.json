@@ -1,0 +1,24 @@
+{
+  "name": "gsrp-verify",
+  "version": "1.0.0",
+  "description": "Georgia State Roleplay - Discord <-> Roblox verification bot + OAuth website (Components V2).",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy-commands": "node scripts/deploy-commands.js",
+    "test": "node scripts/selftest.js",
+    "check": "for f in $(find src scripts -name '*.js'); do node --check \"$f\" || exit 1; done && echo 'syntax ok'"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "license": "MIT"
+}

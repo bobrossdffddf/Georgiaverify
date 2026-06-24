@@ -1,0 +1,12 @@
+services:
+  gsrp-verify:
+    build: .
+    container_name: gsrp-verify
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # host:container — put a reverse proxy (nginx/caddy) in front for HTTPS
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+      - ./assets:/app/assets:ro

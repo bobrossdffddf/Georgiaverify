@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>%%SERVER_NAME%% — Verified</title>
+  <link rel="icon" href="/static/img/logo.webp">
+  <link rel="stylesheet" href="/static/css/style.css">
+  %%DATA%%
+</head>
+<body>
+  <img class="bg-img" src="/static/img/background.webp" alt="">
+  <img class="corner right" src="/static/img/corner-right.png" alt="">
+  <img class="corner left" src="/static/img/corner-left.png" alt="">
+  <div class="bg-overlay"></div>
+
+  <header class="site">
+    <div class="brand">
+      <img src="/static/img/logo.webp" alt="">
+      <span>%%SERVER_NAME%%</span>
+    </div>
+  </header>
+
+  <main class="site">
+    <div class="card">
+      <div class="progress">
+        <div class="seg"><i style="width:100%"></i></div>
+        <div class="seg"><i style="width:100%"></i></div>
+        <div class="seg"><i style="width:100%"></i></div>
+      </div>
+
+      <div class="step center">
+        <svg class="success-check" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="36" fill="none" stroke="#34c759" stroke-width="4" stroke-dasharray="226" stroke-dashoffset="226" style="animation:gsrp-draw .7s cubic-bezier(.16,1,.3,1) forwards"></circle>
+          <path d="M25 41l10 10 21-22" fill="none" stroke="#34c759" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="48" stroke-dashoffset="48" style="animation:gsrp-draw .45s ease forwards .55s"></path>
+        </svg>
+        <h2 class="title">You're verified</h2>
+        <p class="lead">Welcome to <b>%%SERVER_NAME%%</b>. Your roles have been assigned in Discord and a confirmation was sent to you.</p>
+
+        <div class="chips">
+          <span class="chip blue">Verified</span>
+          <span class="chip grey" id="rbx-chip">Roblox</span>
+        </div>
+
+        <a class="btn" href="%%DISCORD_URL%%" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:19px;height:19px"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09-.01-.02-.04-.03-.07-.03-1.5.26-2.93.71-4.27 1.33-.01 0-.02.01-.03.02C2.18 9.05 1.5 12.66 1.83 16.23c0 .02.01.04.03.05 1.8 1.32 3.53 2.12 5.24 2.65.03.01.06 0 .07-.02.4-.55.76-1.13 1.07-1.74.02-.04 0-.08-.04-.09-.57-.22-1.11-.48-1.64-.78-.04-.02-.04-.08-.01-.11.11-.08.22-.17.33-.25.02-.02.05-.02.07-.01 3.44 1.57 7.15 1.57 10.55 0 .02-.01.05-.01.07.01.11.09.22.17.33.26.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78-.04.01-.05.06-.04.09.32.61.68 1.19 1.07 1.74.03.02.06.03.09.02 1.72-.53 3.45-1.33 5.25-2.65.02-.01.03-.03.03-.05.4-4.13-.67-7.72-2.83-10.88-.01-.01-.02-.02-.03-.02ZM8.52 14.06c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12Zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.91.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12Z"></path></svg>
+          Return to Discord
+        </a>
+        <p class="note">You can safely close this tab.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site">
+    <a href="%%DISCORD_URL%%" target="_blank" rel="noopener">Discord</a>
+    <span class="dot">·</span>
+    <a href="%%TERMS_URL%%">Terms</a>
+    <span class="dot">·</span>
+    <a href="%%PRIVACY_URL%%">Privacy Policy</a>
+  </footer>
+
+  <script>
+    (function () {
+      var d = window.__DATA || {};
+      if (d.roblox && d.roblox.username) {
+        var chip = document.getElementById('rbx-chip');
+        if (chip) chip.textContent = '@' + d.roblox.username;
+      }
+    })();
+  </script>
+</body>
+</html>

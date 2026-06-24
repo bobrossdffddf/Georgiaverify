@@ -1,0 +1,25 @@
+# systemd unit for running the bot directly on a Proxmox LXC/VM (no Docker).
+# 1. Copy to /etc/systemd/system/gsrp-verify.service
+# 2. Adjust User= and WorkingDirectory= to match where you cloned the repo.
+# 3. sudo systemctl daemon-reload && sudo systemctl enable --now gsrp-verify
+[Unit]
+Description=Georgia State Roleplay Verification (Discord + Roblox)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gsrp
+WorkingDirectory=/opt/gsrp-verify
+EnvironmentFile=/opt/gsrp-verify/.env
+ExecStart=/usr/bin/node src/index.js
+Restart=on-failure
+RestartSec=5
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

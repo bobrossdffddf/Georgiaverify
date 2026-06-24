@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>%%SERVER_NAME%% — Privacy Policy</title>
+  <link rel="icon" href="/static/img/logo.webp">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <img class="bg-img" src="/static/img/background.webp" alt="">
+  <div class="bg-overlay"></div>
+
+  <header class="site">
+    <div class="brand"><img src="/static/img/logo.webp" alt=""><span>%%SERVER_NAME%%</span></div>
+    <a class="help" href="/verify">Back to verify</a>
+  </header>
+
+  <div class="legal">
+    <a class="back" href="/">← Home</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: June 2026</p>
+
+    <p>This Privacy Policy explains what information the %%SERVER_NAME%% verification service (the “Service”) collects, how it is used, and how you can delete it. We follow a principle of <b>data minimization</b>: we store only what is needed to link your accounts and nothing more.</p>
+
+    <h2>1. Information we store</h2>
+    <ul>
+      <li><b>Discord user ID</b> — the numeric ID of your Discord account.</li>
+      <li><b>Roblox user ID and username</b> — your numeric Roblox ID and current username.</li>
+      <li><b>Server (guild) ID</b> — which server you verified in.</li>
+      <li><b>Timestamps</b> — when you first verified and when your link was last updated, and (if applicable) the staff member who force-verified you.</li>
+    </ul>
+    <p>Temporarily, while you are verifying, we also process a single-use signed link identifier (valid 10 minutes) and a short-lived OAuth “state” value. These are not long-term records.</p>
+
+    <h2>2. Information we do <u>not</u> store</h2>
+    <ul>
+      <li>We never receive or store your Discord or Roblox <b>password</b>.</li>
+      <li>We do <b>not</b> store Roblox OAuth access or refresh tokens. The access token is used once to read your public Roblox profile and is then discarded.</li>
+      <li>We do not collect your email address, payment information, IP-based profile, or any Roblox data beyond your public profile.</li>
+    </ul>
+
+    <h2>3. How we use your information</h2>
+    <ul>
+      <li>To confirm you control the Roblox account and link it to your Discord account.</li>
+      <li>To assign and manage your verified role in Discord.</li>
+      <li>To enable in-game (ER:LC) roleplay features that rely on the Discord ↔ Roblox link.</li>
+      <li>To prevent one Roblox account from being linked to multiple Discord accounts.</li>
+    </ul>
+
+    <h2>4. Roblox authorization scope</h2>
+    <p>When you authorize with Roblox we request only the <code>openid profile</code> scope, which provides your public profile (user ID, username, display name, avatar). We do not request access to messages, friends, inventory, or the ability to act on your behalf.</p>
+
+    <h2>5. Sharing</h2>
+    <p>We do not sell, rent, or trade your information. Your data is stored on the self-hosted %%SERVER_NAME%% server and is accessible only to the bot and authorized staff. It is shared with Discord and Roblox only to the extent inherent in using their platforms (e.g., assigning a role).</p>
+
+    <h2>6. Retention &amp; deletion</h2>
+    <p>We keep your link until you remove it. You can delete your stored data at any time:</p>
+    <ul>
+      <li>Run <b>/unlink</b> in Discord — this immediately deletes your link record and removes your verified role.</li>
+      <li>Expired verification links and OAuth state values are automatically purged.</li>
+      <li>You may also ask staff to delete your data; we will honor verified requests.</li>
+    </ul>
+
+    <h2>7. Security</h2>
+    <p>Verification links and OAuth state are cryptographically signed and time-limited. Links are single-use. We recommend the Service is served over HTTPS. No system is perfectly secure, but we take reasonable measures to protect your data.</p>
+
+    <h2>8. Children</h2>
+    <p>The Service is intended for users who meet Discord’s and Roblox’s minimum age requirements. We do not knowingly collect data from anyone below those ages.</p>
+
+    <h2>9. Changes</h2>
+    <p>We may update this Policy. Material changes will be announced in the %%SERVER_NAME%% Discord server, and the “Last updated” date above will change.</p>
+
+    <h2>10. Contact</h2>
+    <p>For privacy questions or data requests, contact the %%SERVER_NAME%% staff team via our <a href="%%DISCORD_URL%%" target="_blank" rel="noopener">Discord server</a>.</p>
+
+    <div class="panel">
+      <p style="margin:0">This document is a template provided for a community Discord server and is not legal advice. Consider having it reviewed by a qualified professional before relying on it.</p>
+    </div>
+  </div>
+
+  <footer class="site">
+    <a href="%%DISCORD_URL%%" target="_blank" rel="noopener">Discord</a>
+    <span class="dot">·</span>
+    <a href="%%TERMS_URL%%">Terms</a>
+    <span class="dot">·</span>
+    <a href="%%PRIVACY_URL%%">Privacy Policy</a>
+  </footer>
+</body>
+</html>
